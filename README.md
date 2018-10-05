@@ -16,8 +16,8 @@ https://github.com/nvidia/nvidia-docker/wiki/Installation-(version-2.0)
 
 build
 
-$ sudo docker build -f Dockerfile -t david-waterworth/machine-learning:latest  .
+$ sudo docker build -f ./docker/Dockerfile -t david-waterworth/machine-learning:latest  ./docker
 
 run
 
-$ sudo docker run --runtime=nvidia --rm -p 8888:8888 -v "$HOME"/machine-learning/notebooks:/home/david-waterworth/notebooks david-waterworth/machine-learning:latest --name machine-learning
+$ sudo docker run -it --runtime=nvidia --rm -p 8888:8888 -v "$HOME"/machine-learning/notebooks:/home/mluser/notebooks --name machine-learning david-waterworth/machine-learning:latest

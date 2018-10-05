@@ -1,0 +1,7 @@
+machine-learning:
+  image: david-waterworth/machine-learning:latest
+  restart: always
+  ports: 
+    - "8888:8888"
+  volumes: 
+    - "~/machine-learning/notebooks:/home/mluser/notebooks"

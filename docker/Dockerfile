@@ -9,7 +9,7 @@ USER root
 
 # Configure environment
 ENV SHELL=/bin/bash \
-    USER=david-waterworth \
+    USER=mluser \
     UID=1000 \
     GID=100
 
@@ -83,11 +83,12 @@ EXPOSE 8888
 WORKDIR /home/$USER/notebooks
 
 # Configure container startup
-CMD ["jupyter", "notebook"]
+CMD ["sh", "/usr/local/bin/start.sh"]
 
 # Add local files as late as possible to avoid cache busting
 COPY jupyter_notebook_config.py /etc/jupyter/
+COPY start.sh /usr/local/bin/
 RUN fix-permissions /etc/jupyter/
 
-# Switch back to david-waterworth to avoid accidental container runs as root
+# Switch back to $USER to avoid accidental container runs as root
 USER $UID
