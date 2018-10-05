@@ -1,7 +1,11 @@
-machine-learning:
-  image: david-waterworth/machine-learning:latest
-  restart: always
-  ports: 
-    - "8888:8888"
-  volumes: 
-    - "~/machine-learning/notebooks:/home/mluser/notebooks"
+version: '2.3'
+
+services:
+  machine-learning:
+    image: david-waterworth/machine-learning:latest
+    restart: always
+    runtime: nvidia
+    ports: 
+      - "8888:8888"
+    volumes: 
+      - "~/machine-learning/notebooks:/home/mluser/notebooks"
