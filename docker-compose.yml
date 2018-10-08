@@ -8,4 +8,4 @@ services:
     ports:
       - 8888:8888
     volumes: 
-      - "~/machine-learning/notebooks:/home/mluser/notebooks"
+      - "~/machine-learning/notebooks:/home/jovyan/work"
