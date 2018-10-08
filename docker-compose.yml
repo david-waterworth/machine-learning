@@ -5,7 +5,7 @@ services:
     image: david-waterworth/machine-learning:latest
     restart: always
     runtime: nvidia
-    ports: 
-      - "8888:8888"
+    ports:
+      - 8888:8888
     volumes: 
       - "~/machine-learning/notebooks:/home/mluser/notebooks"
