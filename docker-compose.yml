@@ -7,5 +7,7 @@ services:
     runtime: nvidia
     ports:
       - 8888:8888
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
     volumes: 
       - "~/machine-learning/notebooks:/home/jovyan/work"
